@@ -4,8 +4,8 @@
 // The object key is the start of the website URL.
 // The value is a function that takes the URL and returns the selector.
 const ROOT_SELECTORS = {
-  "https://learn.microsoft.com/": () => ".content",
-  "https://review.learn.microsoft.com/": () => ".content",
+  "https://learn.microsoft.com/": () => "main",
+  "https://review.learn.microsoft.com/": () => "main",
   "https://developer.chrome.com/docs/": () => "main",
   "https://github.com/": url => {
     if (url.endsWith(".md") || url.includes(".md#")) {
