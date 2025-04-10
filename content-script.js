@@ -4,8 +4,8 @@
 // The object key is the start of the website URL.
 // The value is a function that takes the URL and returns the selector.
 const ROOT_SELECTORS = {
-  "https://learn.microsoft.com/": () => ".content:not(:has(h1))",
-  "https://review.learn.microsoft.com/": () => ".content:not(:has(h1))",
+  "https://learn.microsoft.com/": () => "main",
+  "https://review.learn.microsoft.com/": () => "main",
   "https://developer.chrome.com/docs/": () => "main",
   "https://github.com/": url => {
     if (url.endsWith(".md") || url.includes(".md#")) {
@@ -27,8 +27,8 @@ const DEFAULT_HEADING_SELECTOR = "h1, h2, h3, h4, h5, h6";
 // The value is a function that takes the URL and returns the headings selector.
 const HEADING_SELECTORS = {
   // For these sites, there's only one real h1, the page title, so we only show h2 and below.
-  "https://learn.microsoft.com/": () => "h2, h3, h4, h5, h6",
-  "https://review.learn.microsoft.com/": () => "h2, h3, h4, h5, h6",
+  "https://learn.microsoft.com/": () => "h2:not(#ms--in-this-article, #ms--feedback, #ms--additional-resources-mobile-heading), h3, h4:not(#article-header h4), h5, h6",
+  "https://review.learn.microsoft.com/": () => "h2:not(#ms--in-this-article, #ms--feedback, #ms--additional-resources-mobile-heading), h3, h4:not(#article-header h4), h5, h6",
   "https://developer.chrome.com/docs/": () => "h2, h3, h4, h5, h6"
 };
 
